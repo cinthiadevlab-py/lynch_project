@@ -101,3 +101,146 @@ sapply(
   genes_mmr,
   function(gene) sum(grepl(gene, clinvar$Gene.s.))
 )
+
+head(
+  sort(
+    table(clinvar$Name),
+    decreasing = TRUE
+  ),
+  20
+)
+
+length(unique(clinvar$Name))
+
+head(clinvar$Name, 20)
+sum(
+  grepl(
+    "NM_000249.3\\(MLH1\\):c",
+    clinvar$Name
+  )
+)
+
+head(
+  sort(
+    table(clinvar$Name),
+    decreasing = TRUE
+  ),
+  20
+)
+
+head(clinvar$Condition.s., 20) 
+
+head(
+  sort(
+    table(clinvar$Condition.s.),
+    decreasing = TRUE
+  ),
+  20
+)
+
+sum(grepl("del", clinvar$Name))
+sum(grepl("dup", clinvar$Name))
+sum(grepl("ins", clinvar$Name))
+sum(grepl("inv", clinvar$Name))
+sum(grepl("EX", clinvar$Name))
+
+head(
+  sort(
+    table(clinvar$Name),
+    decreasing = TRUE
+  ),
+  20
+)
+
+condicoes_top <- sort(
+  table(clinvar$Condition.s.),
+  decreasing = TRUE
+)
+
+View(as.data.frame(condicoes_top))
+
+top_condicoes <- head(
+  sort(
+    table(clinvar$Condition.s.),
+    decreasing = TRUE
+  ),
+  10
+)
+
+barplot(
+  top_condicoes,
+  las = 2,
+  cex.names = 0.7,
+  main = "Top 10 condições associadas ao MLH1",
+  ylab = "Número de registros"
+)
+
+tipos_variantes <- c(
+  Delecao = sum(grepl("del", clinvar$Name)),
+  Duplicacao = sum(grepl("dup", clinvar$Name)),
+  Insercao = sum(grepl("ins", clinvar$Name))
+)
+
+bp <- barplot(
+  tipos_variantes,
+  main = "Tipos de variantes estruturais em MLH1",
+  ylab = "Número de registros"
+)
+
+text(
+  x = bp,
+  y = tipos_variantes,
+  labels = tipos_variantes,
+  pos = 3
+)
+
+names(clinvar)
+
+sort(
+  table(clinvar$Germline.classification),
+  decreasing = TRUE
+)
+
+classificacao <- sort(
+  table(clinvar$Germline.classification),
+  decreasing = TRUE
+)
+
+classificacao
+
+bp2 <- barplot(
+  classificacao,
+  main = "Classificação clínica das variantes MLH1",
+  ylab = "Número de registros"
+)
+
+text(
+  x = bp2,
+  y = classificacao,
+  labels = classificacao,
+  pos = 3
+)
+
+sort(
+  table(clinvar$Germline.review.status),
+  decreasing = TRUE
+)
+
+review_status <- sort(
+  table(clinvar$Germline.review.status),
+  decreasing = TRUE
+)
+bp3 <- barplot(
+  review_status,
+  las = 2,
+  cex.names = 0.7,
+  main = "Nível de evidência clínica das variantes MLH1",
+  ylab = "Número de registros"
+)
+
+text(
+  x = bp3,
+  y = review_status,
+  labels = review_status,
+  pos = 3
+)
