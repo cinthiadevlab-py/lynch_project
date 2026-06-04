@@ -78,4 +78,26 @@ head(
     decreasing = TRUE
   ),
   20
+) 
+
+table(clinvar$Gene.s.)
+
+round(
+  prop.table(
+    table(clinvar$Gene.s.)
+  ) * 100,
+  2
+)
+
+head(clinvar$Gene.s., 20)
+length(unique(clinvar$Gene.s.))
+genes_unicos <- sort(unique(clinvar$Gene.s.))
+
+head(genes_unicos, 30)
+
+genes_mmr <- c("MLH1", "MSH2", "MSH6", "PMS2", "EPCAM")
+
+sapply(
+  genes_mmr,
+  function(gene) sum(grepl(gene, clinvar$Gene.s.))
 )
