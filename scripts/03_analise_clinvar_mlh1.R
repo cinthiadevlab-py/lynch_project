@@ -244,3 +244,40 @@ text(
   labels = review_status,
   pos = 3
 )
+clinvar$Molecular.consequence
+
+consequencias <- unlist(
+  strsplit(
+    clinvar$Molecular.consequence,
+    "\\|"
+  )
+)
+
+sort(
+  table(consequencias),
+  decreasing = TRUE
+)
+
+top_consequencias <- head(
+  sort(
+    table(consequencias),
+    decreasing = TRUE
+  ),
+  10
+)
+
+bp4 <- barplot(
+  top_consequencias,
+  las = 2,
+  cex.names = 0.7,
+  ylim = c(0, max(top_consequencias) * 1.15),
+  main = "Top 10 consequências moleculares em MLH1",
+  ylab = "Número de registros"
+)
+
+text(
+  x = bp4,
+  y = top_consequencias,
+  labels = top_consequencias,
+  pos = 3
+)
