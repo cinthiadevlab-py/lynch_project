@@ -281,3 +281,8 @@ text(
   labels = top_consequencias,
   pos = 3
 )
+
+round(
+  prop.table(classificacao) * 100,
+  2
+)
