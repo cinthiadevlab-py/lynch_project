@@ -310,3 +310,83 @@ sum(tabela_tipo_classificacao)
 # os resultados reforçam a importância de
 # mecanismos de perda de função do gene MLH1
 # na Síndrome de Lynch.
+
+nrow(top_condicoes_relacionais)
+
+# ==========================================
+# DADOS PARA VISUALIZAÇÃO
+# ==========================================
+
+grafico_condicoes <- top_condicoes_relacionais
+grafico_condicoes
+
+top4_condicoes <- grafico_condicoes[1:4, ]
+
+top4_condicoes
+
+library(ggplot2) 
+# Caso o pacote não esteja instalado:
+# install.packages("ggplot2")
+
+# ==========================================
+# GRÁFICO 1 — PRINCIPAIS CONDIÇÕES CLÍNICAS
+# ==========================================
+
+ggplot(
+  top4_condicoes,
+  aes(
+    x = reorder(Var1, Freq),
+    y = Freq
+  )
+) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Top condições clínicas associadas às variantes MLH1",
+    x = "Condição clínica",
+    y = "Frequência"
+  ) +
+  theme_minimal() 
+
+nrow(top_consequencias)
+
+# ==========================================
+# DADOS PARA VISUALIZAÇÃO
+# ==========================================
+
+top10_consequencias <- top_consequencias[1:10, ]
+
+top10_consequencias
+
+# ==========================================
+# REMOVER CONSEQUÊNCIAS VAZIAS
+# ==========================================
+
+top10_consequencias <- subset(
+  top_consequencias,
+  Var1 != ""
+)
+
+top10_consequencias <- top10_consequencias[1:10, ]
+
+top10_consequencias
+
+# ==========================================
+# GRÁFICO 2 — CONSEQUÊNCIAS MOLECULARES
+# ==========================================
+
+ggplot(
+  top10_consequencias,
+  aes(
+    x = reorder(Var1, Freq),
+    y = Freq
+  )
+) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Principais consequências moleculares das variantes MLH1",
+    x = "Consequência molecular",
+    y = "Frequência"
+  ) +
+  theme_minimal() 
