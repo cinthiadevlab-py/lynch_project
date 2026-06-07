@@ -18,8 +18,8 @@
 
 # Instalar pacotes (executar apenas uma vez)
 
-install.packages("readr") 
-install.packages("dplyr")
+# install.packages("readr") 
+# install.packages("dplyr")
 
 # Carregar pacotes
 
