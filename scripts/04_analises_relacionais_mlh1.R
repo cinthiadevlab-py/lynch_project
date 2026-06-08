@@ -389,4 +389,82 @@ ggplot(
     x = "Consequência molecular",
     y = "Frequência"
   ) +
-  theme_minimal() 
+  theme_minimal()
+
+tipo_variantes_df <- as.data.frame(
+  tabela_tipo_classificacao
+)
+
+tipo_variantes_df
+
+tipo_variantes_df <- tipo_variantes_df[
+  order(
+    tipo_variantes_df$Freq,
+    decreasing = TRUE
+  ),
+]
+
+tipo_variantes_df
+
+top6_tipos <- subset(
+  tipo_variantes_df,
+  Freq >= 40
+)
+
+top6_tipos
+
+top_tipos_total <- aggregate(
+  Freq ~ Var1,
+  data = tipo_variantes_df,
+  sum
+)
+
+top_tipos_total
+
+top_tipos_total <- top_tipos_total[
+  order(
+    top_tipos_total$Freq,
+    decreasing = TRUE
+  ),
+]
+
+top_tipos_total
+
+top6_tipos_total <- top_tipos_total[1:6, ]
+
+top6_tipos_total
+
+# ==========================================
+# GRÁFICO 3 — TIPOS DE VARIANTES
+# ==========================================
+
+ggplot(
+  top6_tipos_total,
+  aes(
+    x = reorder(Var1, Freq),
+    y = Freq
+  )
+) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Principais tipos de variantes observados em MLH1",
+    x = "Tipo de variante",
+    y = "Frequência"
+  ) +
+  theme_minimal()
+
+# ==========================================
+# INTERPRETAÇÃO DO GRÁFICO
+# ==========================================
+
+# As deleções representam o principal tipo
+# de variante observado no conjunto de dados.
+
+# Variantes de nucleotídeo único (SNV) e
+# duplicações também apresentam frequências
+# elevadas.
+
+# O predomínio desses tipos de alterações
+# reforça a importância de mecanismos capazes
+# de comprometer a função normal do gene MLH1.
