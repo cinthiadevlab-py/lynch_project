@@ -1,0 +1,21 @@
+"Var1","Var2","Freq"
+"frameshift variant","Pathogenic",290
+"frameshift variant|intron variant","Pathogenic",203
+"","Pathogenic",193
+"frameshift variant|5 prime UTR variant|intron variant","Pathogenic",171
+"frameshift variant|5 prime UTR variant","Pathogenic",163
+"nonsense","Pathogenic",90
+"nonsense|intron variant","Pathogenic",71
+"nonsense|5 prime UTR variant|intron variant","Pathogenic",61
+"nonsense|5 prime UTR variant","Pathogenic",42
+"splice donor variant|intron variant","Pathogenic",29
+"splice acceptor variant|intron variant","Pathogenic",26
+"splice donor variant","Pathogenic",26
+"missense variant|intron variant","Pathogenic",22
+"missense variant|5 prime UTR variant|intron variant","Pathogenic",19
+"frameshift variant","Pathogenic/Likely pathogenic",17
+"splice donor variant","Pathogenic/Likely pathogenic",17
+"missense variant|5 prime UTR variant","Pathogenic",16
+"intron variant","Pathogenic",15
+"splice acceptor variant","Pathogenic",15
+"splice acceptor variant|splice donor variant","Pathogenic",15

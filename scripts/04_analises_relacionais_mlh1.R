@@ -468,3 +468,26 @@ ggplot(
 # O predomínio desses tipos de alterações
 # reforça a importância de mecanismos capazes
 # de comprometer a função normal do gene MLH1.
+
+# ==========================================
+# EXPORTAÇÃO DE RESULTADOS
+# ==========================================
+
+write.csv(
+  top_condicoes_relacionais,
+  "results/top_condicoes_relacionais.csv",
+  row.names = FALSE
+)
+
+write.csv(
+  top_consequencias,
+  "results/top_consequencias.csv",
+  row.names = FALSE
+)
+
+write.csv(
+  top_tipos_total,
+  "results/top_tipos_variantes.csv",
+  row.names = FALSE
+)
+source("scripts/04_analises_relacionais_mlh1.R") 

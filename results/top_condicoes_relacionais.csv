@@ -1,0 +1,11 @@
+"Var1","Var2","Freq"
+"Lynch syndrome","Pathogenic",503
+"Hereditary cancer-predisposing syndrome","Pathogenic",308
+"Hereditary nonpolyposis colorectal neoplasms","Pathogenic",208
+"Colorectal cancer, hereditary nonpolyposis, type 2","Pathogenic",140
+"Hereditary cancer-predisposing syndrome|Colorectal cancer, hereditary nonpolyposis, type 2","Pathogenic",56
+"Hereditary nonpolyposis colorectal neoplasms|Hereditary cancer-predisposing syndrome|Colorectal cancer, hereditary nonpolyposis, type 2","Pathogenic",31
+"Hereditary nonpolyposis colorectal neoplasms|Colorectal cancer, hereditary nonpolyposis, type 2","Pathogenic",29
+"Colorectal cancer, hereditary nonpolyposis, type 2|Hereditary nonpolyposis colorectal neoplasms","Pathogenic",24
+"not provided","Pathogenic",22
+"Lynch syndrome 1","Pathogenic",21
