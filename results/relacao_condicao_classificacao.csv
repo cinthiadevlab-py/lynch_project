@@ -1,0 +1,13 @@
+"Condicao","Classificacao","Frequencia"
+"See cases","Pathogenic",5280
+"Partial duplication of the short arm of chromosome 3","Pathogenic",1374
+"not provided","Pathogenic",668
+"Lynch syndrome","Pathogenic",515
+"Hereditary cancer-predisposing syndrome","Pathogenic",308
+"Hereditary nonpolyposis colorectal neoplasms","Pathogenic",240
+"Colorectal cancer, hereditary nonpolyposis, type 2","Pathogenic",142
+"Hereditary cancer-predisposing syndrome|Colorectal cancer, hereditary nonpolyposis, type 2","Pathogenic",56
+"Hereditary nonpolyposis colorectal neoplasms|Hereditary cancer-predisposing syndrome|Colorectal cancer, hereditary nonpolyposis, type 2","Pathogenic",31
+"Hereditary nonpolyposis colorectal neoplasms|Colorectal cancer, hereditary nonpolyposis, type 2","Pathogenic",29
+"Colorectal cancer, hereditary nonpolyposis, type 2|Hereditary nonpolyposis colorectal neoplasms","Pathogenic",24
+"Lynch syndrome 1","Pathogenic",21
