@@ -1,9 +1,9 @@
 # ==================================================
 # PROJETO LYNCH
-# Modelagem da estrutura de dados
+# Script 01 - Modelagem da estrutura de dados
 # ==================================================
 
-# Genes MMR avaliados
+# Genes clássicos associados à Síndrome de Lynch
 
 genes_mmr <- c(
   "MLH1",
@@ -43,14 +43,13 @@ colunas_variantes <- c(
   "classificacao_acmg",
   "clinvar",
   "classificacao_insight",
-  "impacto_proteico",
+  "consequencia_molecular",
   "literatura"
 )
 
-# Fontes de dados do projeto
+# Fonte de dados utilizada nesta versão do projeto
 
 fontes_dados <- c(
-  "InSiGHT",
   "ClinVar"
 ) 
 
@@ -82,6 +81,6 @@ banco_variantes <- data.frame(
   classificacao_acmg = character(),
   clinvar = character(),
   classificacao_insight = character(),
-  impacto_proteico = character(),
+  consequencia_molecular = character(),
   literatura = character()
-)
+) 

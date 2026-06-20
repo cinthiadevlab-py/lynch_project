@@ -8,8 +8,7 @@
 # Objetivo:
 # Importar variantes reais de bancos públicos
 #
-# Fontes:
-# - InSiGHT
+# Fonte de dados utilizada nesta etapa:
 # - ClinVar
 
 # ==================================================
@@ -58,7 +57,12 @@ clinvar_limpo <- clinvar_mlh1 %>%
     VariationID,
     AlleleID.s.,
     dbSNP.ID
-  )
+  ) 
+dim(clinvar_limpo)
+
+nrow(clinvar_limpo)
+
+ncol(clinvar_limpo)
 
 View(clinvar_limpo)
 table(clinvar_limpo$Germline.classification)
@@ -70,37 +74,12 @@ head(
   ),
   20
 ) 
-summary(clinvar_limpo)
-sort(
-  table(clinvar_limpo$Gene..s.),
-  decreasing = TRUE
-)
-head(clinvar_limpo$Gene..s.)
-colnames(clinvar_limpo) 
-head(clinvar_limpo$Gene.s.) 
-sort(
-  table(clinvar_limpo$Gene.s.),
-  decreasing = TRUE
-)
+summary(clinvar_limpo) 
 sum(grepl("MLH1", clinvar_limpo$Gene.s.)) 
 sum(!grepl("MLH1", clinvar_limpo$Gene.s.)) 
-head(
-  sort(
-    table(clinvar_limpo$Molecular.consequence),
-    decreasing = TRUE
-  ),
-  10
-)
-head(
-  sort(
-    table(clinvar_limpo$Molecular.consequence),
-    decreasing = TRUE
-  ),
-  20
-)
+
 table(clinvar_limpo$Germline.review.status) 
 length(unique(clinvar_limpo$VariationID)) 
-nrow(clinvar_limpo) 
 saveRDS(
   clinvar_limpo,
   "dados_processados/clinvar_mlh1_limpo.rds"

@@ -332,7 +332,7 @@ library(ggplot2)
 # GRÁFICO 1 — PRINCIPAIS CONDIÇÕES CLÍNICAS
 # ==========================================
 
-ggplot(
+grafico_condicoes_plot <- ggplot(
   top4_condicoes,
   aes(
     x = reorder(Var1, Freq),
@@ -342,12 +342,19 @@ ggplot(
   geom_col() +
   coord_flip() +
   labs(
-    title = "Top condições clínicas associadas às variantes MLH1",
     x = "Condição clínica",
     y = "Frequência"
   ) +
-  theme_minimal() 
+  theme_minimal()
 
+grafico_condicoes_plot
+
+ggsave(
+  filename = "figures/grafico_condicoes.png",
+  plot = grafico_condicoes_plot,
+  width = 10,
+  height = 6
+)
 nrow(top_consequencias)
 
 # ==========================================
@@ -375,7 +382,7 @@ top10_consequencias
 # GRÁFICO 2 — CONSEQUÊNCIAS MOLECULARES
 # ==========================================
 
-ggplot(
+grafico_consequencias_plot <- ggplot(
   top10_consequencias,
   aes(
     x = reorder(Var1, Freq),
@@ -385,11 +392,19 @@ ggplot(
   geom_col() +
   coord_flip() +
   labs(
-    title = "Principais consequências moleculares das variantes MLH1",
     x = "Consequência molecular",
     y = "Frequência"
   ) +
   theme_minimal()
+
+grafico_consequencias_plot
+
+ggsave(
+  filename = "figures/grafico_consequencias.png",
+  plot = grafico_consequencias_plot,
+  width = 10,
+  height = 6
+)
 
 tipo_variantes_df <- as.data.frame(
   tabela_tipo_classificacao
@@ -438,7 +453,7 @@ top6_tipos_total
 # GRÁFICO 3 — TIPOS DE VARIANTES
 # ==========================================
 
-ggplot(
+grafico_tipos_plot <- ggplot(
   top6_tipos_total,
   aes(
     x = reorder(Var1, Freq),
@@ -448,12 +463,19 @@ ggplot(
   geom_col() +
   coord_flip() +
   labs(
-    title = "Principais tipos de variantes observados em MLH1",
     x = "Tipo de variante",
     y = "Frequência"
   ) +
   theme_minimal()
 
+grafico_tipos_plot
+
+ggsave(
+  filename = "figures/grafico_tipos_variantes.png",
+  plot = grafico_tipos_plot,
+  width = 10,
+  height = 6
+)
 # ==========================================
 # INTERPRETAÇÃO DO GRÁFICO
 # ==========================================
@@ -490,4 +512,3 @@ write.csv(
   "results/top_tipos_variantes.csv",
   row.names = FALSE
 )
-source("scripts/04_analises_relacionais_mlh1.R") 

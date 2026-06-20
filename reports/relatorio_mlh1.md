@@ -71,6 +71,12 @@ As condições clínicas mais frequentemente associadas às variantes analisadas
 
 A análise das frequências demonstrou predominância de um pequeno grupo de condições clínicas, enquanto diversas outras condições apareceram com menor representação no conjunto de dados.
 
+#### Figura 1. Principais condições clínicas associadas às variantes MLH1
+
+![Principais condições clínicas associadas às variantes MLH1](../figures/grafico_condicoes.png)
+
+A Figura 1 apresenta as condições clínicas mais frequentemente associadas às variantes do gene MLH1 presentes no conjunto de dados analisado.
+
 ### 4.2 Caracterização molecular
 
 A caracterização molecular das variantes revelou predominância de alterações compatíveis com perda de função do gene MLH1.
