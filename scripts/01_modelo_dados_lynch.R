@@ -125,8 +125,8 @@ print(str(banco_variantes))
 cat("Dimensões:", nrow(banco_variantes), "linhas x", ncol(banco_variantes), "colunas\n")
 
 # Confirmação final
-cat("\n✅ Script 01 executado com sucesso!")
-cat("\n✅ Estruturas de dados criadas e validadas")
+cat("\nScript 01 executado com sucesso!")
+cat("\nEstruturas de dados criadas e validadas")
 cat("\nPróximo passo: Script 02 - Importação de dados ClinVar\n")
 
 # ==================================================

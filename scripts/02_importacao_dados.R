@@ -23,7 +23,7 @@ cat("Carregando pacotes...\n")
 library(readr)
 library(dplyr)
 
-cat("✅ Pacotes carregados com sucesso!\n")
+cat("Pacotes carregados com sucesso!\n")
 
 # ==================================================
 # 2. DEFINIR CAMINHOS E VALIDAR ARQUIVOS
@@ -33,10 +33,10 @@ caminho_clinvar <- "dados_brutos/insight/clinvar_mlh1_patogenicas_2026.txt"
 
 # Verificar se arquivo existe
 if (!file.exists(caminho_clinvar)) {
-  stop("\n❌ ERRO CRÍTICO: Arquivo ClinVar não encontrado em:\n", caminho_clinvar)
+  stop("\nERRO CRÍTICO: Arquivo ClinVar não encontrado em:\n", caminho_clinvar)
 }
 
-cat("✅ Arquivo ClinVar localizado!\n")
+cat("Arquivo ClinVar localizado!\n")
 
 # ==================================================
 # 3. IMPORTAR DADOS ORIGINAIS
@@ -51,7 +51,7 @@ clinvar_bruto <- read.delim(
   stringsAsFactors = FALSE
 )
 
-cat("✅ Importação concluída!\n")
+cat("Importação concluída!\n")
 cat(sprintf("   Dimensões: %d linhas × %d colunas\n", 
             nrow(clinvar_bruto), ncol(clinvar_bruto)))
 
@@ -87,7 +87,7 @@ clinvar_mlh1_processado <- clinvar_bruto %>%
     dbSNP.ID                   # dbSNP reference IDs (if available)
   )
 
-cat("✅ Seleção concluída!\n")
+cat("Seleção concluída!\n")
 cat(sprintf("   Resultado: %d linhas × %d colunas\n", 
             nrow(clinvar_mlh1_processado), ncol(clinvar_mlh1_processado)))
 
@@ -207,11 +207,11 @@ saveRDS(
 # Verificar se arquivo foi criado
 if (file.exists(caminho_saida)) {
   tamanho_arquivo <- file.size(caminho_saida)
-  cat(sprintf("✅ Arquivo salvo com sucesso!\n"))
+  cat(sprintf("Arquivo salvo com sucesso!\n"))
   cat(sprintf("   Localização: %s\n", caminho_saida))
   cat(sprintf("   Tamanho: %.2f KB\n", tamanho_arquivo / 1024))
 } else {
-  stop("❌ ERRO: Falha ao salvar arquivo RDS!")
+  stop("ERRO: Falha ao salvar arquivo RDS!")
 }
 
 # ==================================================
@@ -219,11 +219,11 @@ if (file.exists(caminho_saida)) {
 # ==================================================
 
 cat("\n=== RESUMO DO SCRIPT 02 ===\n")
-cat(sprintf("✅ 1.745 variantes MLH1 importadas do ClinVar\n"))
-cat(sprintf("✅ 10 colunas clinicamente relevantes selecionadas\n"))
-cat(sprintf("✅ Integridade dos dados validada\n"))
-cat(sprintf("✅ Dados processados salvos em RDS\n"))
-cat("\n✅ SCRIPT 02 EXECUTADO COM SUCESSO!\n")
+cat(sprintf("1.745 variantes MLH1 importadas do ClinVar\n"))
+cat(sprintf("10 colunas clinicamente relevantes selecionadas\n"))
+cat(sprintf("Integridade dos dados validada\n"))
+cat(sprintf("Dados processados salvos em RDS\n"))
+cat("\nSCRIPT 02 EXECUTADO COM SUCESSO!\n")
 cat("Próximo passo: Script 03 - Análise Exploratória Descritiva\n")
 
 # ==================================================

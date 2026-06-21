@@ -24,13 +24,13 @@ cat("Carregando dados processados...\n")
 
 # Validar arquivo
 if (!file.exists("dados_processados/clinvar_mlh1_limpo.rds")) {
-  stop("❌ ERRO: RDS não encontrado!\nExecute Script 02 primeiro.")
+  stop("ERRO: RDS não encontrado!\nExecute Script 02 primeiro.")
 }
 
 # Carregar dados
 clinvar <- readRDS("dados_processados/clinvar_mlh1_limpo.rds")
 
-cat("✅ Dados carregados com sucesso!\n")
+cat("Dados carregados com sucesso!\n")
 cat(sprintf("   Dimensões: %d linhas × %d colunas\n", 
             nrow(clinvar), ncol(clinvar)))
 cat(sprintf("   Colunas: %s\n", paste(names(clinvar), collapse = ", ")))
@@ -66,7 +66,7 @@ df_classificacao <- data.frame(
 write.csv(df_classificacao, 
           "results/classificacao_germline.csv", 
           row.names = FALSE)
-cat("✅ Resultados salvos em: results/classificacao_germline.csv\n")
+cat("Resultados salvos em: results/classificacao_germline.csv\n")
 
 # Gráfico 1: Classificações
 png("figures/01_classificacao_germline.png", 
@@ -84,7 +84,7 @@ text(x = coord_x, y = classificacao,
      labels = classificacao, pos = 3, font = 2)
 
 dev.off()
-cat("✅ Gráfico salvo em: figures/01_classificacao_germline.png\n")
+cat("Gráfico salvo em: figures/01_classificacao_germline.png\n")
 
 # ==================================================
 # 3. ANÁLISE CLÍNICA - STATUS DE REVISÃO
@@ -116,7 +116,7 @@ df_review <- data.frame(
 write.csv(df_review, 
           "results/review_status.csv", 
           row.names = FALSE)
-cat("✅ Resultados salvos em: results/review_status.csv\n")
+cat("Resultados salvos em: results/review_status.csv\n")
 
 # Gráfico 2: Status de revisão
 png("figures/02_review_status.png", 
@@ -136,7 +136,7 @@ text(x = coord_x, y = review_status,
      labels = review_status, pos = 3, font = 2)
 
 dev.off()
-cat("✅ Gráfico salvo em: figures/02_review_status.png\n")
+cat("Gráfico salvo em: figures/02_review_status.png\n")
 
 # ==================================================
 # 4. ANÁLISE CLÍNICA - CONDIÇÕES
@@ -168,7 +168,7 @@ df_condicoes <- data.frame(
 write.csv(df_condicoes, 
           "results/top_condicoes.csv", 
           row.names = FALSE)
-cat("✅ Resultados salvos em: results/top_condicoes.csv\n")
+cat("Resultados salvos em: results/top_condicoes.csv\n")
 
 # Gráfico 3: Top 10 condições
 png("figures/03_top_condicoes.png", 
@@ -190,7 +190,7 @@ text(x = coord_x, y = top10_condicoes,
      labels = top10_condicoes, pos = 3, font = 2)
 
 dev.off()
-cat("✅ Gráfico salvo em: figures/03_top_condicoes.png\n")
+cat("Gráfico salvo em: figures/03_top_condicoes.png\n")
 
 # ==================================================
 # 5. ANÁLISE MOLECULAR - CONSEQUÊNCIAS
@@ -220,7 +220,7 @@ df_consequencias <- data.frame(
 write.csv(df_consequencias, 
           "results/top_consequencias.csv", 
           row.names = FALSE)
-cat("✅ Resultados salvos em: results/top_consequencias.csv\n")
+cat("Resultados salvos em: results/top_consequencias.csv\n")
 
 # Gráfico 4: Top consequências
 png("figures/04_top_consequencias.png", 
@@ -242,7 +242,7 @@ text(x = coord_x, y = top10_consequencias,
      labels = top10_consequencias, pos = 3, font = 2)
 
 dev.off()
-cat("✅ Gráfico salvo em: figures/04_top_consequencias.png\n")
+cat("Gráfico salvo em: figures/04_top_consequencias.png\n")
 
 # ==================================================
 # 6. ANÁLISE MOLECULAR - TIPOS DE VARIANTES
@@ -292,11 +292,11 @@ cat(sprintf("\nVariantes contendo MLH1: %d/%d (%.1f%%)\n",
 # ==================================================
 
 cat("\n=== RESUMO SCRIPT 03 ===\n")
-cat(sprintf("✅ Dataset analisado: %d variantes MLH1\n", nrow(clinvar)))
-cat(sprintf("✅ %d colunas processadas\n", ncol(clinvar)))
-cat(sprintf("✅ 4 gráficos PNG criados em: figures/\n"))
-cat(sprintf("✅ 4 arquivos CSV criados em: results/\n"))
-cat("\n✅ SCRIPT 03 EXECUTADO COM SUCESSO!\n")
+cat(sprintf("Dataset analisado: %d variantes MLH1\n", nrow(clinvar)))
+cat(sprintf("%d colunas processadas\n", ncol(clinvar)))
+cat(sprintf("4 gráficos PNG criados em: figures/\n"))
+cat(sprintf("4 arquivos CSV criados em: results/\n"))
+cat("\nSCRIPT 03 EXECUTADO COM SUCESSO!\n")
 cat("Próximo passo: Script 04 - Análises Relacionais\n\n")
 
 # ==================================================

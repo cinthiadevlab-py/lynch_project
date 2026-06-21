@@ -27,13 +27,13 @@ cat("Análises Relacionais e Cruzamentos\n")
 
 # Validar arquivo de dados expandidos
 if (!file.exists("dados_processados/clinvar_mlh1_expandido.rds")) {
-  stop("❌ ERRO: Execute Script 04 primeiro (tabela expandida)!")
+  stop("ERRO: Execute Script 04 primeiro (tabela expandida)!")
 }
 
 cat("Carregando dados expandidos...\n")
 clinvar <- readRDS("dados_processados/clinvar_mlh1_expandido.rds")
 
-cat("✅ Dados carregados com sucesso!\n")
+cat("Dados carregados com sucesso!\n")
 cat(sprintf("   Dimensões: %d linhas × %d colunas\n", 
             nrow(clinvar), ncol(clinvar)))
 cat(sprintf("   Colunas: %s\n", paste(names(clinvar), collapse = ", ")))
@@ -50,12 +50,12 @@ if (!require(ggplot2, quietly = TRUE)) {
   install.packages("ggplot2", quiet = TRUE)
   library(ggplot2)
 }
-cat("✅ ggplot2 carregado!\n")
+cat("ggplot2 carregado!\n")
 
 # Criar diretório de figuras se não existir
 if (!dir.exists("figures")) {
   dir.create("figures", showWarnings = FALSE)
-  cat("✅ Diretório 'figures' criado!\n")
+  cat("Diretório 'figures' criado!\n")
 }
 
 # ==================================================
@@ -104,16 +104,16 @@ cat(sprintf("\nValidação: soma de frequências = %d (esperado: %d)\n",
             soma_verificacao, nrow(clinvar)))
 
 if (soma_verificacao == nrow(clinvar)) {
-  cat("✅ Validação PASSOU!\n")
+  cat("Validação PASSOU!\n")
 } else {
-  cat("⚠️ AVISO: Discrepância na soma de frequências\n")
+  cat("AVISO: Discrepância na soma de frequências\n")
 }
 
 # Exportar resultados
 write.csv(top_condicoes_relacionais, 
           "results/relacao_condicao_classificacao.csv",
           row.names = FALSE)
-cat("✅ Resultados salvos em: results/relacao_condicao_classificacao.csv\n")
+cat("Resultados salvos em: results/relacao_condicao_classificacao.csv\n")
 
 # ==================================================
 # 4. ANÁLISE 2: CONSEQUÊNCIA × CLASSIFICAÇÃO
@@ -166,16 +166,16 @@ cat(sprintf("\nValidação: soma de frequências = %d (esperado: %d)\n",
             soma_verificacao_2, nrow(clinvar)))
 
 if (soma_verificacao_2 == nrow(clinvar)) {
-  cat("✅ Validação PASSOU!\n")
+  cat("Validação PASSOU!\n")
 } else {
-  cat("⚠️ AVISO: Discrepância na soma de frequências\n")
+  cat("AVISO: Discrepância na soma de frequências\n")
 }
 
 # Exportar resultados
 write.csv(top_consequencias, 
           "results/relacao_consequencia_classificacao.csv",
           row.names = FALSE)
-cat("✅ Resultados salvos em: results/relacao_consequencia_classificacao.csv\n")
+cat("Resultados salvos em: results/relacao_consequencia_classificacao.csv\n")
 
 # ==================================================
 # 5. ANÁLISE 3: GENE × CLASSIFICAÇÃO (EXPANDIDO!)
@@ -221,7 +221,7 @@ cat(sprintf("\nTotal de genes com frequência ≥ 10: %d\n",
 write.csv(top_genes, 
           "results/relacao_gene_classificacao.csv",
           row.names = FALSE)
-cat("✅ Resultados salvos em: results/relacao_gene_classificacao.csv\n")
+cat("Resultados salvos em: results/relacao_gene_classificacao.csv\n")
 
 # ==================================================
 # 6. GRÁFICO 1: TOP CONDIÇÕES
@@ -261,9 +261,9 @@ if (nrow(top5_condicoes) > 0) {
     height = 6,
     dpi = 100
   )
-  cat("✅ Gráfico 1 salvo em: figures/06_relacao_condicoes.png\n")
+  cat("Gráfico 1 salvo em: figures/06_relacao_condicoes.png\n")
 } else {
-  cat("⚠️ Sem dados suficientes para gráfico 1\n")
+  cat("Sem dados suficientes para gráfico 1\n")
 }
 
 # ==================================================
@@ -302,9 +302,9 @@ if (nrow(top10_consequencias) > 0) {
     height = 7,
     dpi = 100
   )
-  cat("✅ Gráfico 2 salvo em: figures/07_relacao_consequencias.png\n")
+  cat("Gráfico 2 salvo em: figures/07_relacao_consequencias.png\n")
 } else {
-  cat("⚠️ Sem dados suficientes para gráfico 2\n")
+  cat("Sem dados suficientes para gráfico 2\n")
 }
 
 # ==================================================
@@ -343,9 +343,9 @@ if (nrow(top10_genes) > 0) {
     height = 6,
     dpi = 100
   )
-  cat("✅ Gráfico 3 salvo em: figures/08_relacao_genes.png\n")
+  cat("Gráfico 3 salvo em: figures/08_relacao_genes.png\n")
 } else {
-  cat("⚠️ Sem dados suficientes para gráfico 3\n")
+  cat("Sem dados suficientes para gráfico 3\n")
 }
 
 # ==================================================
@@ -356,19 +356,19 @@ cat("\n=== INTERPRETAÇÕES BIOLÓGICAS ===\n")
 
 # Classificação predominante
 pathogenic_count <- sum(grepl("Pathogenic", clinvar$Germline.classification))
-cat(sprintf("\n🧬 Classificação:\n"))
+cat(sprintf("\nClassificação:\n"))
 cat(sprintf("   Variantes Pathogenic: %d (%.1f%%)\n", 
             pathogenic_count, 
             pathogenic_count/nrow(clinvar)*100))
 
 # Consequências mais frequentes
-cat(sprintf("\n🧬 Consequências Moleculares:\n"))
+cat(sprintf("\nConsequências Moleculares:\n"))
 cat(sprintf("   Total de tipos únicos: %d\n", 
             length(unique(clinvar$Molecular.consequence))))
 cat(sprintf("   Frameshift + Nonsense (LOF): ~65%% do total\n"))
 
 # Genes afetados
-cat(sprintf("\n🧬 Genes Afetados:\n"))
+cat(sprintf("\nGenes Afetados:\n"))
 cat(sprintf("   MLH1 sempre presente: 100%%\n"))
 cat(sprintf("   Genes adjacentes afetados: %d únicos\n", 
             length(unique(clinvar$Gene_individual)) - 1))
@@ -379,22 +379,22 @@ cat(sprintf("   Genes adjacentes afetados: %d únicos\n",
 
 cat("\n=== RESUMO SCRIPT 05 ===\n")
 
-cat(sprintf("\n📊 ANÁLISES CONCLUÍDAS:\n"))
-cat(sprintf("   ✅ Condição × Classificação\n"))
-cat(sprintf("   ✅ Consequência × Classificação\n"))
-cat(sprintf("   ✅ Gene × Classificação (expandido!)\n"))
+cat(sprintf("\nANÁLISES CONCLUÍDAS:\n"))
+cat(sprintf("   Condição × Classificação\n"))
+cat(sprintf("   Consequência × Classificação\n"))
+cat(sprintf("   Gene × Classificação (expandido!)\n"))
 
-cat(sprintf("\n📈 GRÁFICOS CRIADOS:\n"))
-cat(sprintf("   ✅ 06_relacao_condicoes.png\n"))
-cat(sprintf("   ✅ 07_relacao_consequencias.png\n"))
-cat(sprintf("   ✅ 08_relacao_genes.png\n"))
+cat(sprintf("\nGRÁFICOS CRIADOS:\n"))
+cat(sprintf("   06_relacao_condicoes.png\n"))
+cat(sprintf("   07_relacao_consequencias.png\n"))
+cat(sprintf("   08_relacao_genes.png\n"))
 
-cat(sprintf("\n📁 ARQUIVOS CSV CRIADOS:\n"))
-cat(sprintf("   ✅ relacao_condicao_classificacao.csv\n"))
-cat(sprintf("   ✅ relacao_consequencia_classificacao.csv\n"))
-cat(sprintf("   ✅ relacao_gene_classificacao.csv\n"))
+cat(sprintf("\nARQUIVOS CSV CRIADOS:\n"))
+cat(sprintf("   relacao_condicao_classificacao.csv\n"))
+cat(sprintf("   relacao_consequencia_classificacao.csv\n"))
+cat(sprintf("   relacao_gene_classificacao.csv\n"))
 
-cat(sprintf("\n✅ SCRIPT 05 EXECUTADO COM SUCESSO!\n"))
+cat(sprintf("\nSCRIPT 05 EXECUTADO COM SUCESSO!\n"))
 cat(sprintf("Dados prontos para etapa 6 (Validação ACMG/AMP)\n\n"))
 
 # ==================================================
