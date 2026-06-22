@@ -1,0 +1,9 @@
+R >= 4.0.0
+
+Base packages only for Scripts 01-08:
+- base
+- utils
+- stats
+- graphics
+
+No external packages required for Stages 01-08
