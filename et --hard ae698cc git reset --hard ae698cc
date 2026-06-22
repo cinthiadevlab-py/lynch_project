@@ -1,0 +1,20 @@
+[33mebaa6d0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Merge branch 'main' of https://github.com/cinthiadevlab-py/lynch_project
+[33mae698cc[m ETAPA 08: Scripts 01-08 testados e reproduzíveis (100%) - Script 01-03: Modelo, importacao, exploracao - Script 04: Separacao de genes (9083 -> 1739 unicas) - Script 05: Analises relacionais (3 graficos) - Script 06: Validacao ACMG/AMP (1208 pathogenic) - Script 07: gnomAD simulado v4.0 (seed 42) - Script 08: Anotacoes gnomAD completas Teste de reprodutibilidade: 8/8 scripts PASSOU (100%) Resultado: 1739 variantes, 95.4% pathogenic Proximas etapas: Scripts 09-15
+[33md9896e3[m Update README.md
+[33m2c12b09[m refactor: Validar compatibilidade e reproducibilidade dos Scripts 01-05
+[33m7b70605[m feat: Script 06 - Validacao ACMG/AMP 2015 com classificacoes de patogenicidade
+[33mf79a5c9[m results: Gráficos e tabelas das análises 01-05
+[33m157983c[m data: Adicionar tabela expandida com genes individuais
+[33md9a5073[m refactor: Reorganizar scripts 01-05 com validações completas
+[33m482181d[m Etapa 6: Adicionar README.md profissional com documentação completa
+[33m582eb81[m Etapa 6: Atualizar documentação e figuras - README, requirements, CONTRIBUTING
+[33me184d7c[m G Create first scientific report draft
+[33mb5f6fee[m Export figures and tables from relational analyses
+[33m7cbffb3[m Finalize part 5 relational analyses
+[33mfd1017c[m Add relational analyses and first visualizations
+[33m19947b7[m Add relational analyses for conditions consequences and variant types
+[33m02897d1[m add pathogenic percentage calculation
+[33m6586488[m Complete Part 4 clinical and molecular characterization
+[33m67b20c9[m Completed clinical evidence visualizations
+[33mf0e83a3[m Validated MLH1-only dataset
+[33mc563307[m Initial Clinvar MLH1 analysis workflow
