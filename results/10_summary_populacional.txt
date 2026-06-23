@@ -1,0 +1,27 @@
+===== SCRIPT 10 - ANALISE POPULACIONAL =====
+
+Data: 2026-06-23 13:06:51 
+
+RESUMO POR SUBGRUPO
+==================
+    Subgrupo Total Pathogenic VUS Benign Pct_Pathogenic Genes_Unicos
+1 Ultra_Rara  1485       1485   0      0            100           11
+2 Muito_Rara    80          0  80      0              0            9
+
+
+DISTRIBUICÃO DE GENES
+====================
+
+     ABHD14A        ABHD5        ACAA1      ANKRD28        APRG1         AZI2     EPM2AIP1 
+           1            1            2            1            1            1           19 
+    KIAA1143   KRABD1-AS1 LOC126806655 LOC129936342 LOC129936470 LOC129936471      LRRFIP2 
+           1            1            1            1            1            1            4 
+        MLH1         MOBP 
+        1702            1 
+
+
+DISTRIBUICÃO DE CLASSIFICACOES
+==============================
+
+Pathogenic        VUS 
+      1659         80 
